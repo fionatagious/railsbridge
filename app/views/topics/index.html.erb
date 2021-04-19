@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +13,7 @@
   <tbody>
     <% @topics.each do |topic| %>
       <tr>
-        <td><%= topic.title %></td>
-        <td><%= topic.description %></td>
+        <td><%= link_to topic.title, topic %></td> # make the title a link
         # add a button to the view
         <td><%= pluralize(topic.votes.count, "vote") %></td> # displays number of votes the topic has plus the word "vote" or "votes"
         <td><%= button_to '+1', upvote_topic_path(topic), method: :post %></td> # creates an HTML button with the text "+1" and invokes the action that upvotes the current topic
