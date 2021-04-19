@@ -16,6 +16,9 @@
       <tr>
         <td><%= topic.title %></td>
         <td><%= topic.description %></td>
+        # add a button to the view
+        <td><%= pluralize(topic.votes.count, "vote") %></td> # displays number of votes the topic has plus the word "vote" or "votes"
+        <td><%= button_to '+1', upvote_topic_path(topic), method: :post %></td> # creates an HTML button with the text "+1" and invokes the action that upvotes the current topic
         <td><%= link_to 'Show', topic %></td>
         <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
         <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
