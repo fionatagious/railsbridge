@@ -69,7 +69,7 @@ initialized a new repository in a hidden directory called `.git`."
   step do
     console "git push -u origin main"
 
-    message "`git push -u origin main` pushes your local changes to your remote repository"
+    message "`git push -u origin main` pushes your local changes to your remote repository."
   end
   
 end
